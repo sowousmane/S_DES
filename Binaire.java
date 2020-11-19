@@ -5,11 +5,11 @@ class Binaire
    * renvoie le nombre decimal correspondant **/ 
   static int ConversionEnDecimale(int...bits)
   {
-  
-         
      int temp=0;
      int base = 1;
-     for(int i=bits.length-1 ; i>=0;i--)
+     int i;
+     
+     for( i=bits.length-1 ; i>=0;i--)
      {
         temp = temp + (bits[i]*base);
         base = base * 2 ;
@@ -18,12 +18,14 @@ class Binaire
       return temp;
   }
   
-  /** Cette methode prend en paramettre un nombre decimal  et 
+  /** Cette methode prend en parametre un nombre decimal  et 
    * renvoie le codage binaire correspondant au chiffre  **/ 
-  static int[] ConversionEnBinaire(int no)
+  static int[] ConversionEnBinaire(int nb)
   {
-    
-      if(no==0)
+         int i;
+         int j;
+
+      if(nb==0)
       {
         int[] zero = new int[2];
         zero[0] = 0;
@@ -34,10 +36,10 @@ class Binaire
       
         
       int compteur = 0 ;
-        for(int i= 0 ; no!= 0 ; i++)
+        for(i= 0 ; nb!= 0 ; i++)
         {
-          temp[i] = no % 2;
-          no = no/2;
+          temp[i] = nb % 2;
+          nb = nb/2;
         compteur++;
         }
         
@@ -45,12 +47,12 @@ class Binaire
       int[] temp2 = new int[compteur];
       
       
-      for(int i=compteur-1, j=0;i>=0 && j<compteur;i--,j++)
+      for(i=compteur-1, j=0;i>=0 && j<compteur;i--,j++)
       {
         temp2[j] = temp[i];
       }
       
-      /*  Obliger à renvoyer 2 bits */
+      /*  Obliger à renvoyer 2 bits pour la sortie la S Box */
         if(compteur<2)
       {
         temp = new int[2];
