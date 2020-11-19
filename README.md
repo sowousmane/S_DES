@@ -53,6 +53,6 @@ Prenons un exemple, si on a en entrée 0110 de S0, alors la sortie sera 3 en d´
 On obtient donc en sortie de ces Sbox 4 bits, ces 4 bits subissent une dernière permutation appelée P4 qui est la sortie de la fonction F. P4(n1,n2,n3,n4) = (n2,n4,n3,n1)
 Le calcul de fonctionFk se fait ensuite simplement en réalisant un ou exclusif avec les 4 bits les plus `a gauche des 8 bits d’entrée (sortie de IP).
 
-3.4	La fonction de permutation EchangeGD
+La fonction de permutation EchangeGD
 Comme la fonction fonctionFk ne modifie que les 4 bits les plus à gauche de l’entrée. La fonction SW échange les 4 bits les plus à gauche avec les 4 bits les plus à droite et on réalise une deuxième application de la fonction fonctionFk pour ces 4 nouveaux bits.
 Dans cette deuxième application de la fonction fonctionFk, tout est identique, sauf que la clé K2 est utilisée.
